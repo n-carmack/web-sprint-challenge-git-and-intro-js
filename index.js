@@ -246,10 +246,13 @@ Use listOfNames to do the following:
 */
 
 function listOfNames(array) {
-  /*Your Code Here*/
+  const artistsNames = [...array];
+  for(let i=0; i< artistsNames.length; i++) {
+    artistsNames[i] = array[i].name;
+  } return artistsNames;
 }
 
-
+console.log('task 4:', listOfNames(artists));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use removeArtist to do the following:
@@ -260,10 +263,12 @@ Use removeArtist to do the following:
 5. Return the resulting copied array
 🌟 EXAMPLE: if removeArtist is invoked with the artists array and the number 0, it will return the resulting array with Amedeo Modigliani removed from our dataset. */
 
-function removeArtist(/*Your Code Here*/) {
-  /*Your Code Here*/
+function removeArtist(array, number) {
+  const shorterArtists = [...array];
+  shorterArtists.splice(number, 1);
+  return shorterArtists;
 }
-
+console.log('task 5:', removeArtist(artists, 0));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -282,10 +287,19 @@ Use addArtist to do the following:
 5. Add the newly created object to the copied array, then return the copied array
 🌟 EXAMPLE: Invoking addArtist(artists, 'John Doe', '1988-2022', 'Full Stack Development', 'African American', 'I have a background in customer service at Big Retail Chain. I am attending BloomTech to become a Frontend Developer.') should return the artists array with the above object added to the end of the array. */
 
-function addArtist(/*Your Code Here*/) {
-  /*Your Code Here*/
+function addArtist(array, nameAdd, yearsAdd, genreAdd, nationalityAdd, bioAdd) {
+  const expandedArtists = [... array];
+  const newArtist= {
+    name: nameAdd,
+    years: yearsAdd,
+    genre: genreAdd,
+    nationality: nationalityAdd,
+    bio: bioAdd,
+  }
+  expandedArtists.push(newArtist);
+  return expandedArtists;
 }
-
+console.log('task 6:', addArtist(artists, 'John Doe', '1988-2022', 'Full Stack Development', 'African American', 'I have a background in customer service at Big Retail Chain. I am attending BloomTech to become a Frontend Developer.'));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
